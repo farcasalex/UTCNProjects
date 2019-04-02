@@ -1,0 +1,48 @@
+.root{
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f9f9f9, #f3f3f3, #eeeeee, #e8e8e8, #e2e2e2, #dcdcdc, #d6d6d6, #cecece, #c6c6c6, #bfbfbf, #b7b7b7);
+}
+
+.text-area {
+    -fx-background-color: none;
+    -fx-text-fill: #ffffff;
+}
+
+.text-area .scroll-pane {
+    -fx-background-color: #000000;
+}
+
+.text-area .scroll-pane .viewport{
+    -fx-background-color: #000000;
+}
+
+
+.text-area .scroll-pane .content{
+    -fx-background-color: #000000;
+}
+
+.bar-chart:vertical .chart-content .chart-plot-background{
+    -fx-background-color: transparent;
+}
+
+.text-field, .combo-box{
+	-fx-background-color: none;
+	-fx-border-color: #cccccc;
+	-fx-border-radius: 15px;
+}
+
+.control{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #6F6D6D;
+    -fx-background-radius: 15px;
+}
+
+.control: hover{
+    -fx-cursor: hand;
+    -fx-background-color: #B0B0B0;
+}
+
+.result{
+    -fx-background-color: none;
+    -fx-border-color: none;
+    -fx-border-radius: none;
+}
