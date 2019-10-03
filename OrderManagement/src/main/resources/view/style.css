@@ -1,0 +1,95 @@
+.table-view .column-header, .table-view .column-header-background .filler {
+    -fx-background-color:  #037ABB;
+}
+.table-view .column-header .label{
+   -fx-text-fill: white;
+   -fx-font-weight: bold;
+   -fx-alignment: CENTER_LEFT;
+}
+
+#close {
+	-fx-background-color: none;
+	-fx-border-color: none;
+}
+
+#close:hover #circle{
+	-fx-cursor: hand;
+	-fx-fill: rgb(188, 22, 0);
+}
+
+.cover {
+    -fx-background-color: linear-gradient(to top, #037abb, #0160a0, #024685, #022f69, #00184e);
+}
+
+.text-field,.combo-box{
+	-fx-background-color: none;
+	-fx-border-width:0px 0px 1px 0px;
+    -fx-border-style:solid solid solid solid;
+    -fx-border-color:#ffffff #ffffff #ffffff #ffffff;
+	-fx-text-fill: #ffffff;
+}
+
+.combo-box .arrow-button .arrow{
+    -fx-background-color: #ffffff;
+}
+
+.combo-box .cell:selected{
+    -fx-text-fill: #ffffff;
+}
+
+.titled-pane:expanded .title{
+    -fx-background-color: linear-gradient(to left, #037abb, #037abb, #037abb, #037abb, #037abb, #027cbc, #017fbe, #0081bf, #0086c2, #008cc5, #0091c8, #0096cb);
+}
+
+.titled-pane:collapsed .title{
+    -fx-background-color: #037ABB;
+}
+
+.titled-pane:collapsed .title:hover{
+    -fx-background-color: #00bbff;
+}
+
+.titled-pane:collapsed .title .text, .titled-pane:collapsed .title .arrow-button .arrow, .titled-pane:expanded .title .text, .titled-pane:expanded .title .arrow-button .arrow{
+    -fx-fill: #ffffff;
+    -fx-background-color: #ffffff;
+}
+
+.button{
+    -fx-background-color: none;
+    -fx-border-color: #ffffff;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+}
+
+.button:hover {
+    -fx-background-color: #037ABB;
+    -fx-border-color: #037ABB;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+}
+
+.error{
+    -fx-border-width:0px 0px 0px 0px;
+    -fx-border-style:solid solid solid solid;
+    -fx-border-color:#ffffff #ffffff #ffffff #ffffff;
+    -fx-text-fill: #ff0000;
+    -fx-cursor: default;
+}
+
+.new-order{
+    -fx-border-width:0px 0px 0px 0px;
+    -fx-border-style:solid solid solid solid;
+    -fx-border-color:#ffffff #ffffff #ffffff #ffffff;
+}
+
+.remove:hover{
+    -fx-background-color: #ff0000;
+    -fx-border-color: #ff0000;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
+}
+
+.root{
+    -fx-background-image: url("../media/warehouse.jpg");
+}

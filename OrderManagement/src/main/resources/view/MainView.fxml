@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+   <children>
+      <AnchorPane fx:id="header" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="100.0" styleClass="cover">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="269.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../media/logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="close" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#CloseAction" prefHeight="5.0" prefWidth="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <Circle fx:id="circle" fill="#ff1f1f" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Accordion>
+        <panes>
+          <TitledPane animated="false" prefHeight="186.0" prefWidth="1280.0" text="Orders">
+               <content>
+                  <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="545.0" prefWidth="1278.0" styleClass="cover">
+                     <children>
+                        <TableView fx:id="ordersProductsTable" layoutX="43.0" layoutY="45.0" onMouseClicked="#ordersProductAction" prefHeight="435.0" prefWidth="390.0" />
+                        <TableView fx:id="ordersClientsTable" layoutX="445.0" layoutY="45.0" onMouseClicked="#ordersClientAction" prefHeight="435.0" prefWidth="390.0" />
+                        <TableView fx:id="ordersOrdersTable" layoutX="846.0" layoutY="45.0" prefHeight="435.0" prefWidth="390.0" />
+                        <TextField fx:id="ordersProductSearch" layoutX="43.0" layoutY="14.0" onAction="#ordersProductSearchAction" prefHeight="25.0" prefWidth="157.0" promptText="🔍" />
+                        <Label layoutX="229.0" layoutY="15.0" text="by" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ordersProductSearchFilter" layoutX="283.0" layoutY="14.0" prefWidth="150.0" />
+                        <TextField fx:id="ordersClientSearch" layoutX="445.0" layoutY="14.0" onAction="#ordersClientSearchAction" prefHeight="25.0" prefWidth="157.0" promptText="🔍" />
+                        <Label layoutX="631.0" layoutY="15.0" text="by" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ordersClientSearchFilter" layoutX="685.0" layoutY="14.0" prefWidth="150.0" />
+                        <TextField fx:id="ordersOrderSearch" layoutX="846.0" layoutY="14.0" onAction="#orderSearchAction" prefHeight="25.0" prefWidth="157.0" promptText="🔍" />
+                        <Label layoutX="1032.0" layoutY="15.0" text="by" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ordersOrderSearchFilter" layoutX="1086.0" layoutY="14.0" prefWidth="150.0" />
+                        <Label layoutX="43.0" layoutY="501.0" text="New order of" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newOrderAmount" layoutX="143.0" layoutY="494.0" prefHeight="25.0" prefWidth="66.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="473.0" layoutY="500.0" text="for" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="newOrderClient" editable="false" layoutX="500.0" layoutY="494.0" prefHeight="26.0" prefWidth="205.0" styleClass="new-order">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="newOrderProduct" editable="false" layoutX="229.0" layoutY="494.0" prefHeight="26.0" prefWidth="240.0" styleClass="new-order">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="717.0" layoutY="500.0" mnemonicParsing="false" onAction="#placeOrderAction" prefWidth="150.0" text="PLACE ORDER" />
+                        <TextField fx:id="placeOrderError" editable="false" layoutX="886.0" layoutY="495.0" styleClass="error">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+          <TitledPane animated="false" text="Client operations">
+               <content>
+                  <AnchorPane prefHeight="544.0" prefWidth="1241.0" styleClass="cover">
+                     <children>
+                        <TableView fx:id="clientTable" layoutX="55.0" layoutY="48.0" prefHeight="471.0" prefWidth="606.0" />
+                        <TextField fx:id="clientSearch" layoutX="55.0" layoutY="14.0" onAction="#clientSearchAction" prefHeight="25.0" prefWidth="157.0" promptText="🔍" />
+                        <Label layoutX="236.0" layoutY="15.0" text="by" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="clientSearchFilter" layoutX="277.0" layoutY="14.0" prefWidth="150.0" />
+                        <Button layoutX="720.0" layoutY="48.0" mnemonicParsing="false" onAction="#clientRemoveAction" prefWidth="100.0" styleClass="remove" text="REMOVE" />
+                        <Button layoutX="720.0" layoutY="101.0" mnemonicParsing="false" onAction="#clientEditAction" prefWidth="100.0" text="EDIT" />
+                        <AnchorPane fx:id="clientEditBox" layoutX="841.0" layoutY="101.0" prefHeight="177.0" prefWidth="404.0" AnchorPane.rightAnchor="14.0">
+                           <children>
+                              <TextField fx:id="clientFirstname" layoutX="173.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="clientName" layoutX="173.0" layoutY="50.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="clientAddress" layoutX="173.0" layoutY="100.0" prefHeight="27.0" prefWidth="250.0" />
+                              <Label layoutX="1.0" text="FIRSTNAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="51.0" text="NAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="101.0" text="ADDRESS:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="173.0" layoutY="150.0" mnemonicParsing="false" onAction="#clientEditSubmitAction" prefWidth="250.0" text="SUBMIT CHANGES" />
+                              <TextField fx:id="clientEditError" editable="false" layoutX="14.0" layoutY="150.0" styleClass="error" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="clientAddBox" layoutX="831.0" layoutY="342.0" prefHeight="177.0" prefWidth="361.0">
+                           <children>
+                              <TextField fx:id="clientFirstnameAdd" layoutX="173.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="clientNameAdd" layoutX="173.0" layoutY="50.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="clientAddressAdd" layoutX="173.0" layoutY="100.0" prefHeight="27.0" prefWidth="250.0" />
+                              <Label layoutX="1.0" text="FIRSTNAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="51.0" text="NAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="101.0" text="ADDRESS:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="173.0" layoutY="150.0" mnemonicParsing="false" onAction="#clientAddSubmitAction" prefWidth="250.0" text="SUBMIT" />
+                              <TextField fx:id="clientAddError" editable="false" layoutX="14.0" layoutY="150.0" styleClass="error" />
+                           </children>
+                        </AnchorPane>
+                        <Button layoutX="720.0" layoutY="492.0" mnemonicParsing="false" onAction="#clientAddAction" prefWidth="100.0" text="ADD" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Product operations">
+               <content>
+                  <AnchorPane prefHeight="832.0" prefWidth="1278.0" styleClass="cover">
+                     <children>
+                        <TableView fx:id="productTable" layoutX="55.0" layoutY="48.0" prefHeight="471.0" prefWidth="606.0" />
+                        <TextField fx:id="productSearch" layoutX="55.0" layoutY="14.0" onAction="#productSearchAction" prefHeight="25.0" prefWidth="157.0" promptText="🔍" />
+                        <Label layoutX="236.0" layoutY="15.0" text="by" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="productSearchFilter" layoutX="277.0" layoutY="14.0" prefWidth="150.0" />
+                        <Button layoutX="720.0" layoutY="48.0" mnemonicParsing="false" onAction="#productRemoveAction" prefWidth="100.0" styleClass="remove" text="REMOVE" />
+                        <Button layoutX="720.0" layoutY="101.0" mnemonicParsing="false" onAction="#productEditAction" prefWidth="100.0" text="EDIT" />
+                        <AnchorPane fx:id="productEditBox" layoutX="841.0" layoutY="101.0" prefHeight="153.0" prefWidth="414.0" AnchorPane.rightAnchor="14.0">
+                           <children>
+                              <TextField fx:id="productCategory" layoutX="173.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="productName" layoutX="173.0" layoutY="50.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="productStock" layoutX="173.0" layoutY="100.0" prefHeight="27.0" prefWidth="250.0" />
+                              <Label layoutX="1.0" text="CATEGORY:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="51.0" text="NAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="101.0" text="STOCK:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="173.0" layoutY="150.0" mnemonicParsing="false" onAction="#productEditSubmitAction" prefWidth="250.0" text="SUBMIT CHANGES" />
+                              <TextField fx:id="productEditError" editable="false" layoutX="9.0" layoutY="150.0" styleClass="error" />
+                           </children>
+                        </AnchorPane>
+                        <Button layoutX="720.0" layoutY="492.0" mnemonicParsing="false" onAction="#productAddAction" prefWidth="100.0" text="ADD" />
+                        <AnchorPane fx:id="productAddBox" layoutX="831.0" layoutY="342.0" prefHeight="153.0" prefWidth="414.0">
+                           <children>
+                              <TextField fx:id="productCategoryAdd" layoutX="173.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="productNameAdd" layoutX="173.0" layoutY="50.0" prefHeight="27.0" prefWidth="250.0" />
+                              <TextField fx:id="productStockAdd" layoutX="173.0" layoutY="100.0" prefHeight="27.0" prefWidth="250.0" />
+                              <Label layoutX="1.0" text="CATEGORY:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="1.0" layoutY="51.0" text="NAME:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="101.0" text="STOCK:" textFill="WHITE">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="173.0" layoutY="150.0" mnemonicParsing="false" onAction="#productAddSubmitAction" prefWidth="250.0" text="SUBMIT" />
+                              <TextField fx:id="productAddError" editable="false" layoutX="9.0" layoutY="150.0" styleClass="error" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</VBox>

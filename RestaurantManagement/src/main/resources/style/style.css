@@ -1,0 +1,47 @@
+.root {
+    -fx-background-color: #7a7a7a;
+}
+#close {
+	-fx-background-color: none;
+	-fx-border-color: none;
+}
+
+#close:hover #circle{
+	-fx-cursor: hand;
+	-fx-fill: rgb(188, 22, 0);
+}
+
+.button, .combo-box {
+    -fx-background-color: #d1d1d1;
+    -fx-border-color: none;
+}
+
+.button:hover {
+    -fx-background-color: #939393;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 3px;
+    -fx-cursor: hand;
+}
+
+#delete:hover {
+    -fx-background-color: red;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: red;
+    -fx-border-radius: 3px;
+    -fx-cursor: hand;
+}
+
+.combo-box:hover {
+    -fx-cursor: hand;
+}
+
+.menu-bar {
+    -fx-background-color: #999999;
+}
+
+.text-area:readonly .scroll-pane:fitToWidth:fitToHeight .viewport .content {
+	-fx-background-color: #e0e0e0;
+	-fx-background-radius: none;
+	-fx-text-fill: white;
+	-fx-border-color: none;
+}
