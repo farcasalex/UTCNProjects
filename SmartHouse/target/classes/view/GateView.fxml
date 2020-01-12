@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <TextField fx:id="text" alignment="CENTER" editable="false" focusTraversable="false" style="-fx-text-fill: #e8f530; -fx-background-color: transparent;" text="LABEL" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Andale Mono" size="40.0" />
+         </font>
+      </TextField>
+   </center>
+</BorderPane>
